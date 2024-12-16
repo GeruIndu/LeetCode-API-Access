@@ -66,7 +66,10 @@ document.querySelector('.btn').addEventListener('click', async () => {
     container.innerHTML = "";
     const username = user.value.trim();
     if(Boolean(username) == false)
+    {
+        document.querySelector('.error').innerHTML = '';
         document.querySelector('.empty').style.display = 'block';
+    }
     else
     {
         document.querySelector('.empty').style.display = 'none';
