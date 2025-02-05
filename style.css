@@ -148,7 +148,7 @@ body {
     justify-content: center;
     align-items: center;
     background: rgb(255, 241, 241);
-    /* transition: 0.5s ease-in-out; */
+    transition: 0.5s ease-in-out;
 }
 
 .circle::before {
