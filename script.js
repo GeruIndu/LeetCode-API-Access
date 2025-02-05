@@ -19,9 +19,10 @@ async function addContent(data, user) {
     let circle = left.querySelector(".circle");
     let percentage = (data.totalSolved / data.totalQuestions) * 100;
     circle.style.background = `conic-gradient(
-        rgb(48, 209, 54) 0% ${percentage}%,
+        rgb(128, 128, 128) 0% ${percentage}%,
         black ${percentage}% 100%
     )`;
+
 
     let right = document.createElement('div');
     right.setAttribute('class', 'right');
