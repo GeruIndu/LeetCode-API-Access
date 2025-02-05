@@ -16,12 +16,12 @@ async function addContent(data, user) {
                         </div>                   
                       </div>`;
 
-    let circle = left.querySelector('.circle');
-    let percentage = ((data.totalSolved / data.totalQuestions) * 100);
-    console.log(percentage);
-    circle.style.background = `conic-gradient (
-                        rgb(48, 209, 54) 0% ${percentage}%
-                        )`;
+    let circle = left.querySelector(".circle");
+    let percentage = (data.totalSolved / data.totalQuestions) * 100;
+    circle.style.background = `conic-gradient(
+        rgb(48, 209, 54) 0% ${percentage}%,
+        black ${percentage}% 100%
+    )`;
 
     let right = document.createElement('div');
     right.setAttribute('class', 'right');
@@ -49,10 +49,9 @@ async function dataFetch(username) {
             return response.json();
         })
         .then(async (data) => {
-            if(data.ranking == undefined)
+            if (data.ranking == undefined)
                 document.querySelector('.error').innerHTML = data.errors[0].message;
-            else
-            {
+            else {
                 document.querySelector('.error').innerHTML = '';
                 await addContent(data, username);
             }
@@ -65,13 +64,10 @@ async function dataFetch(username) {
 document.querySelector('.btn').addEventListener('click', async () => {
     container.innerHTML = "";
     const username = user.value.trim();
-    if(Boolean(username) == false)
-    {
+    if (Boolean(username) == false) {
         document.querySelector('.error').innerHTML = '';
         document.querySelector('.empty').style.display = 'block';
-    }
-    else
-    {
+    } else {
         document.querySelector('.empty').style.display = 'none';
         await dataFetch(username);
     }

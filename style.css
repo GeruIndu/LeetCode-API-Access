@@ -147,8 +147,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: conic-gradient(#303030 0% 0%,
-            #000000 0% 100%);
+    background: rgb(255, 241, 241);
     /* transition: 0.5s ease-in-out; */
 }
 
@@ -157,7 +156,7 @@ body {
     position: absolute;
     width: 65%;
     height: 70%;
-    background: #1f1f1f;
+    background: #222222;
     border-radius: 50%;
 }
 
